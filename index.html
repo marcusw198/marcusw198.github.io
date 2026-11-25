@@ -1,0 +1,1512 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>niceassBBW_视频品牌官方门户_原创高清内容社区</title>
+<meta name="description" content="niceassBBW 官方网站，面向全球观众的视频品牌内容平台，汇聚原创高清影像、行业观察、创作者访谈与企业动态，持续运营值得信赖的内容生态。">
+<meta name="keywords" content="niceassBBW,视频品牌,官方网站,原创内容,高清视频,内容社区">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1d2a'/%3E%3Cpath d='M24 18l22 14-22 14z' fill='%23ff8a3d'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --nbb-bg:#12141c;
+    --nbb-bg-2:#181b26;
+    --nbb-panel:#1e2230;
+    --nbb-panel-2:#252a3b;
+    --nbb-line:#2f3548;
+    --nbb-text:#eceef6;
+    --nbb-muted:#9aa2b8;
+    --nbb-accent:#ff8a3d;
+    --nbb-accent-2:#5d7cff;
+    --nbb-mint:#3ddc97;
+    --nbb-radius:14px;
+    --nbb-sticky-h:104px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:var(--nbb-sticky-h);}
+  body{
+    margin:0;
+    background:radial-gradient(1200px 600px at 80% -10%,rgba(93,124,255,.16),transparent 60%),radial-gradient(900px 500px at 0% 0%,rgba(255,138,61,.12),transparent 55%),var(--nbb-bg);
+    color:var(--nbb-text);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;}
+  h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700;}
+  p{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  /* ---------- sticky header group ---------- */
+  .nbb-sticky-wrap{
+    position:sticky;top:0;z-index:80;
+    backdrop-filter:blur(14px);
+    background:rgba(18,20,28,.92);
+    border-bottom:1px solid var(--nbb-line);
+  }
+  .nbb-announce{
+    display:flex;align-items:center;gap:12px;
+    padding:9px clamp(14px,3vw,40px);
+    background:linear-gradient(90deg,rgba(255,138,61,.18),rgba(93,124,255,.16));
+    border-bottom:1px solid var(--nbb-line);
+    font-size:13px;color:#ffd9bf;
+    overflow:hidden;
+  }
+  .nbb-announce .nbb-announce-tag{
+    flex:none;
+    background:var(--nbb-accent);color:#1a1206;font-weight:700;
+    padding:2px 9px;border-radius:999px;font-size:12px;letter-spacing:.5px;
+  }
+  .nbb-announce .nbb-announce-text{
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#e8ecf8;
+  }
+  .nbb-announce .nbb-announce-text b{color:var(--nbb-accent);font-weight:700;}
+
+  .nbb-header{
+    display:flex;align-items:center;gap:clamp(12px,2vw,28px);
+    padding:12px clamp(14px,3vw,40px);
+    max-width:1320px;margin:0 auto;
+  }
+  .nbb-brand{display:flex;align-items:center;gap:10px;flex:none;}
+  .nbb-brand-mark{
+    width:38px;height:38px;border-radius:11px;
+    background:linear-gradient(135deg,var(--nbb-accent),#ff5f8a 60%,var(--nbb-accent-2));
+    display:grid;place-items:center;flex:none;
+  }
+  .nbb-brand-mark svg{width:18px;height:18px;}
+  .nbb-brand-name{font-weight:800;font-size:17px;letter-spacing:.6px;}
+  .nbb-brand-name small{display:block;font-size:11px;font-weight:500;color:var(--nbb-muted);letter-spacing:2px;}
+
+  .nbb-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px;}
+  .nbb-nav a{
+    padding:7px 12px;border-radius:9px;font-size:14px;color:var(--nbb-muted);
+    transition:background .2s,color .2s;white-space:nowrap;
+  }
+  .nbb-nav a:hover{background:var(--nbb-panel-2);color:var(--nbb-text);}
+
+  .nbb-header-tools{display:flex;align-items:center;gap:10px;margin-left:auto;}
+  .nbb-search{position:relative;display:flex;align-items:center;}
+  .nbb-search input{
+    width:200px;max-width:44vw;
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);color:var(--nbb-text);
+    border-radius:999px;padding:8px 14px 8px 34px;font-size:13px;outline:none;
+    transition:border-color .2s,width .25s;
+  }
+  .nbb-search input:focus{border-color:var(--nbb-accent);width:250px;}
+  .nbb-search svg{position:absolute;left:11px;width:15px;height:15px;stroke:var(--nbb-muted);fill:none;stroke-width:2;}
+  .nbb-search-tip{
+    position:absolute;top:calc(100% + 8px);left:0;right:0;
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:10px;
+    padding:8px 12px;font-size:12.5px;color:var(--nbb-muted);
+    display:none;z-index:90;box-shadow:0 16px 30px rgba(0,0,0,.4);
+  }
+  .nbb-search-tip.nbb-tip-on{display:block;}
+  .nbb-search-tip b{color:var(--nbb-accent);}
+  .nbb-btn-cta{
+    border:0;background:linear-gradient(135deg,var(--nbb-accent),#ff6a4d);
+    color:#21130a;font-weight:700;font-size:13.5px;
+    padding:9px 18px;border-radius:999px;white-space:nowrap;
+    transition:transform .18s,box-shadow .18s;
+  }
+  .nbb-btn-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(255,138,61,.32);}
+  .nbb-burger{
+    display:none;width:40px;height:38px;border-radius:10px;
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);color:var(--nbb-text);
+    place-items:center;padding:0;
+  }
+  .nbb-burger span{display:block;width:17px;height:2px;background:var(--nbb-text);margin:3px 0;border-radius:2px;transition:.2s;}
+
+  /* ---------- layout ---------- */
+  .nbb-container{max-width:1320px;margin:0 auto;padding:0 clamp(14px,3vw,40px);}
+  .nbb-section{padding:clamp(38px,5vw,64px) 0;}
+  .nbb-section + .nbb-section{border-top:1px solid rgba(47,53,72,.55);}
+  .nbb-sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px;}
+  .nbb-sec-head h2{font-size:clamp(21px,2.6vw,28px);letter-spacing:.3px;}
+  .nbb-sec-head p{color:var(--nbb-muted);font-size:14px;max-width:560px;}
+  .nbb-kicker{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--nbb-accent);
+    font-weight:700;margin-bottom:8px;
+  }
+  .nbb-kicker::before{content:"";width:18px;height:2px;background:var(--nbb-accent);display:block;}
+
+  /* ---------- hero ---------- */
+  .nbb-hero{padding:clamp(30px,5vw,58px) 0 clamp(20px,4vw,40px);}
+  .nbb-hero-grid{
+    display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:clamp(22px,3.5vw,48px);
+    align-items:center;
+  }
+  .nbb-h1{
+    font-size:clamp(30px,4.6vw,52px);line-height:1.12;letter-spacing:-.5px;
+    background:linear-gradient(120deg,#fff 20%,#ffc9a4 55%,#9fb1ff 95%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    word-break:break-word;
+  }
+  .nbb-hero-sub{
+    color:var(--nbb-muted);font-size:clamp(14px,1.6vw,16px);margin-top:16px;max-width:560px;
+  }
+  .nbb-hero-sub b{color:var(--nbb-text);}
+  .nbb-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .nbb-btn-primary,.nbb-btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:999px;font-size:14.5px;font-weight:700;
+    border:1px solid transparent;transition:transform .18s,background .18s,border-color .18s;
+  }
+  .nbb-btn-primary{background:linear-gradient(135deg,var(--nbb-accent),#ff6a4d);color:#21130a;}
+  .nbb-btn-ghost{background:transparent;border-color:var(--nbb-line);color:var(--nbb-text);}
+  .nbb-btn-primary:hover,.nbb-btn-ghost:hover{transform:translateY(-2px);}
+  .nbb-btn-ghost:hover{border-color:var(--nbb-accent-2);background:rgba(93,124,255,.1);}
+
+  .nbb-hero-stats{display:flex;gap:clamp(18px,3vw,38px);margin-top:30px;flex-wrap:wrap;}
+  .nbb-hero-stats div{min-width:88px;}
+  .nbb-hero-stats b{
+    display:block;font-size:clamp(22px,2.8vw,30px);color:#fff;letter-spacing:-.5px;
+    font-variant-numeric:tabular-nums;
+  }
+  .nbb-hero-stats span{font-size:12.5px;color:var(--nbb-muted);letter-spacing:.5px;}
+
+  .nbb-hero-visual{position:relative;}
+  .nbb-hero-frame{
+    border-radius:22px;overflow:hidden;border:1px solid var(--nbb-line);
+    box-shadow:0 30px 70px rgba(0,0,0,.5);
+    aspect-ratio:4/5;
+  }
+  .nbb-hero-frame svg{width:100%;height:100%;display:block;}
+  .nbb-hero-badge{
+    position:absolute;left:-12px;bottom:26px;
+    background:rgba(24,27,38,.94);border:1px solid var(--nbb-line);
+    border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:11px;
+    box-shadow:0 16px 34px rgba(0,0,0,.45);backdrop-filter:blur(8px);
+  }
+  .nbb-hero-badge .nbb-dot{
+    width:9px;height:9px;border-radius:50%;background:var(--nbb-mint);flex:none;
+    box-shadow:0 0 0 4px rgba(61,220,151,.18);
+  }
+  .nbb-hero-badge p{font-size:12.5px;color:var(--nbb-muted);line-height:1.5;}
+  .nbb-hero-badge b{display:block;color:#fff;font-size:13.5px;}
+
+  /* ---------- intro ---------- */
+  .nbb-intro-wrap{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,4vw,52px);
+    align-items:start;
+  }
+  .nbb-intro-text p{color:#c9cee0;font-size:15px;margin-bottom:14px;}
+  .nbb-intro-text p:last-child{margin-bottom:0;}
+  .nbb-intro-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;}
+  .nbb-mini-card{
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:var(--nbb-radius);
+    padding:18px 20px;transition:border-color .2s,transform .2s;
+  }
+  .nbb-mini-card:hover{border-color:var(--nbb-accent-2);transform:translateX(3px);}
+  .nbb-mini-card h3{font-size:15px;margin-bottom:6px;color:#fff;}
+  .nbb-mini-card p{font-size:13.5px;color:var(--nbb-muted);}
+
+  /* ---------- feature (focus content) ---------- */
+  .nbb-feature-grid{
+    display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3vw,34px);
+    align-items:start;
+  }
+  .nbb-feature-main{
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:18px;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .nbb-feature-cover{aspect-ratio:16/9;overflow:hidden;}
+  .nbb-feature-cover svg{width:100%;height:100%;}
+  .nbb-feature-body{padding:22px 24px 26px;}
+  .nbb-tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+  .nbb-tag{
+    font-size:11.5px;padding:3px 10px;border-radius:999px;letter-spacing:.4px;
+    background:rgba(93,124,255,.14);color:#a9b8ff;border:1px solid rgba(93,124,255,.28);
+  }
+  .nbb-tag.nbb-tag-hot{background:rgba(255,138,61,.14);color:#ffb98f;border-color:rgba(255,138,61,.32);}
+  .nbb-feature-body h3{font-size:clamp(18px,2.1vw,22px);margin-bottom:10px;}
+  .nbb-feature-body p{color:var(--nbb-muted);font-size:14px;}
+  .nbb-meta-row{
+    display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:12.5px;color:var(--nbb-muted);
+    align-items:center;
+  }
+  .nbb-meta-row b{color:#fff;font-weight:600;}
+
+  .nbb-feature-list{display:flex;flex-direction:column;gap:2px;}
+  .nbb-video-row{
+    display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;
+    padding:16px 6px;border-bottom:1px dashed var(--nbb-line);align-items:start;
+  }
+  .nbb-video-row:last-child{border-bottom:0;}
+  .nbb-video-index{
+    width:36px;height:36px;border-radius:10px;background:var(--nbb-panel-2);
+    display:grid;place-items:center;font-weight:800;font-size:14px;color:var(--nbb-accent);
+    border:1px solid var(--nbb-line);
+  }
+  .nbb-video-row h4{font-size:15px;margin-bottom:5px;color:#fff;transition:color .2s;}
+  .nbb-video-row:hover h4{color:var(--nbb-accent);}
+  .nbb-video-row p{font-size:13px;color:var(--nbb-muted);margin-bottom:8px;}
+  .nbb-video-foot{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--nbb-muted);align-items:center;}
+  .nbb-video-foot .nbb-author{color:#a9b8ff;}
+  .nbb-mini-actions{display:flex;gap:8px;margin-top:10px;}
+  .nbb-act{
+    display:inline-flex;align-items:center;gap:5px;
+    background:var(--nbb-panel-2);border:1px solid var(--nbb-line);color:var(--nbb-muted);
+    font-size:12px;padding:4px 10px;border-radius:999px;transition:.18s;
+  }
+  .nbb-act:hover{border-color:var(--nbb-accent-2);color:#fff;}
+  .nbb-act.nbb-act-on{color:var(--nbb-accent);border-color:var(--nbb-accent);background:rgba(255,138,61,.1);}
+  .nbb-act svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;}
+
+  /* ---------- keyword analysis ---------- */
+  .nbb-analysis{
+    background:linear-gradient(180deg,rgba(37,42,59,.55),rgba(30,34,48,.25));
+    border:1px solid var(--nbb-line);border-radius:20px;padding:clamp(22px,3.4vw,40px);
+  }
+  .nbb-analysis h3{font-size:17px;margin:22px 0 10px;color:#ffd0b0;}
+  .nbb-analysis h3:first-of-type{margin-top:8px;}
+  .nbb-analysis p{font-size:14.5px;color:#c9cee0;margin-bottom:12px;}
+  .nbb-analysis ul{margin:0 0 14px;padding-left:0;}
+  .nbb-analysis li{
+    font-size:14px;color:#c9cee0;padding-left:20px;position:relative;margin-bottom:7px;
+  }
+  .nbb-analysis li::before{
+    content:"";position:absolute;left:4px;top:11px;width:6px;height:6px;border-radius:50%;
+    background:var(--nbb-accent-2);
+  }
+
+  /* ---------- topic / plan cards ---------- */
+  .nbb-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+  .nbb-plan-card{
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:16px;
+    padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,border-color .2s;
+  }
+  .nbb-plan-card:hover{transform:translateY(-4px);border-color:var(--nbb-accent-2);}
+  .nbb-plan-status{
+    align-self:flex-start;font-size:11.5px;padding:2px 10px;border-radius:999px;
+    background:rgba(61,220,151,.12);color:#7cf0bb;border:1px solid rgba(61,220,151,.3);
+  }
+  .nbb-plan-status.nbb-status-soon{background:rgba(255,138,61,.12);color:#ffb98f;border-color:rgba(255,138,61,.3);}
+  .nbb-plan-card h3{font-size:16.5px;color:#fff;}
+  .nbb-plan-card > p{font-size:13px;color:var(--nbb-muted);}
+  .nbb-plan-items{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+  .nbb-plan-items li{
+    font-size:12.8px;color:#b9c0d6;padding-left:16px;position:relative;line-height:1.6;
+  }
+  .nbb-plan-items li::before{
+    content:"";position:absolute;left:0;top:9px;width:6px;height:1.5px;background:var(--nbb-accent);
+  }
+
+  /* ---------- creators ---------- */
+  .nbb-creator-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+  .nbb-creator{
+    display:grid;grid-template-columns:62px minmax(0,1fr);gap:16px;
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:16px;padding:20px;
+    transition:border-color .2s,transform .2s;
+  }
+  .nbb-creator:hover{border-color:var(--nbb-accent);transform:translateY(-2px);}
+  .nbb-avatar{
+    width:62px;height:62px;border-radius:50%;overflow:hidden;flex:none;
+    border:2px solid var(--nbb-line);
+  }
+  .nbb-avatar svg{width:100%;height:100%;}
+  .nbb-creator h3{font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .nbb-creator h3 span{
+    font-size:11px;font-weight:500;color:var(--nbb-muted);border:1px solid var(--nbb-line);
+    padding:1px 7px;border-radius:999px;
+  }
+  .nbb-creator-stats{display:flex;gap:14px;font-size:12px;color:var(--nbb-muted);margin:7px 0 8px;flex-wrap:wrap;}
+  .nbb-creator-stats b{color:#fff;}
+  .nbb-creator p{font-size:13px;color:var(--nbb-muted);}
+
+  /* ---------- index / image-text ---------- */
+  .nbb-index-list{display:flex;flex-direction:column;gap:16px;}
+  .nbb-index-item{
+    display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px;
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:16px;padding:16px;
+    align-items:center;transition:border-color .2s;
+  }
+  .nbb-index-item:hover{border-color:var(--nbb-accent-2);}
+  .nbb-index-thumb{aspect-ratio:16/10;border-radius:10px;overflow:hidden;border:1px solid var(--nbb-line);}
+  .nbb-index-thumb svg{width:100%;height:100%;}
+  .nbb-index-item h3{font-size:16px;margin-bottom:6px;}
+  .nbb-index-item p{font-size:13px;color:var(--nbb-muted);}
+  .nbb-index-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .nbb-index-tags span{font-size:11.5px;color:#a9b8ff;background:rgba(93,124,255,.12);padding:2px 9px;border-radius:999px;}
+
+  /* ---------- comments ---------- */
+  .nbb-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .nbb-comment{
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:14px;padding:18px 20px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .nbb-comment-head{display:flex;align-items:center;gap:10px;}
+  .nbb-comment-head .nbb-avatar{width:36px;height:36px;border-width:1px;}
+  .nbb-comment-head b{font-size:13.5px;}
+  .nbb-comment-head small{font-size:11.5px;color:var(--nbb-muted);margin-left:auto;}
+  .nbb-comment q{
+    font-size:13.5px;color:#c9cee0;quotes:"“" "”";line-height:1.7;display:block;
+  }
+  .nbb-stars{display:flex;gap:2px;color:var(--nbb-accent);font-size:12px;letter-spacing:1px;}
+
+  /* ---------- news ---------- */
+  .nbb-news-list{display:flex;flex-direction:column;}
+  .nbb-news-item{
+    display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;
+    padding:16px 0;border-bottom:1px dashed var(--nbb-line);align-items:start;
+  }
+  .nbb-news-item:last-child{border-bottom:0;}
+  .nbb-news-date{font-size:12.5px;color:var(--nbb-muted);font-variant-numeric:tabular-nums;padding-top:3px;}
+  .nbb-news-item h3{font-size:15px;margin-bottom:4px;}
+  .nbb-news-item p{font-size:13px;color:var(--nbb-muted);}
+
+  /* ---------- faq ---------- */
+  .nbb-faq-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 26px;}
+  .nbb-faq{
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:12px;
+    padding:14px 18px;transition:border-color .2s;
+  }
+  .nbb-faq[open]{border-color:var(--nbb-accent-2);}
+  .nbb-faq summary{
+    cursor:pointer;font-size:14px;font-weight:600;color:#fff;list-style:none;
+    display:flex;justify-content:space-between;gap:12px;align-items:center;
+  }
+  .nbb-faq summary::-webkit-details-marker{display:none;}
+  .nbb-faq summary::after{content:"+";color:var(--nbb-accent);font-size:18px;line-height:1;flex:none;}
+  .nbb-faq[open] summary::after{content:"−";}
+  .nbb-faq p{font-size:13px;color:var(--nbb-muted);margin-top:10px;}
+
+  /* ---------- partners ---------- */
+  .nbb-partner-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+  .nbb-partner{
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:12px;
+    padding:20px 16px;text-align:center;transition:border-color .2s,transform .2s;
+  }
+  .nbb-partner:hover{border-color:var(--nbb-accent);transform:translateY(-3px);}
+  .nbb-partner b{display:block;font-size:15px;margin-bottom:4px;}
+  .nbb-partner span{font-size:12px;color:var(--nbb-muted);}
+
+  /* ---------- contact ---------- */
+  .nbb-contact{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;
+    background:linear-gradient(120deg,rgba(93,124,255,.14),rgba(255,138,61,.1));
+    border:1px solid var(--nbb-line);border-radius:18px;padding:clamp(22px,3.4vw,34px);
+  }
+  .nbb-contact h2{font-size:clamp(20px,2.4vw,25px);margin-bottom:8px;}
+  .nbb-contact p{font-size:14px;color:#c9cee0;max-width:640px;}
+
+  /* ---------- footer ---------- */
+  .nbb-footer{
+    border-top:1px solid var(--nbb-line);margin-top:20px;
+    background:rgba(24,27,38,.6);
+  }
+  .nbb-footer-inner{
+    max-width:1320px;margin:0 auto;padding:clamp(30px,4vw,48px) clamp(14px,3vw,40px) 26px;
+    display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:26px;
+  }
+  .nbb-footer-brand p{font-size:13px;color:var(--nbb-muted);margin-top:12px;max-width:340px;}
+  .nbb-footer h4{font-size:13.5px;margin-bottom:12px;color:#fff;letter-spacing:.5px;}
+  .nbb-footer li{font-size:13px;color:var(--nbb-muted);margin-bottom:8px;transition:color .2s;}
+  .nbb-footer li:hover{color:var(--nbb-accent);}
+  .nbb-footer-bottom{
+    border-top:1px solid var(--nbb-line);
+    max-width:1320px;margin:0 auto;padding:16px clamp(14px,3vw,40px);
+    font-size:12.5px;color:var(--nbb-muted);display:flex;flex-wrap:wrap;gap:10px 22px;
+  }
+
+  /* ---------- toast / modal ---------- */
+  .nbb-toast{
+    position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);
+    background:#0c0e15;border:1px solid var(--nbb-accent);color:#fff;
+    padding:11px 22px;border-radius:999px;font-size:13.5px;z-index:200;
+    opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
+    box-shadow:0 18px 40px rgba(0,0,0,.55);
+  }
+  .nbb-toast.nbb-toast-on{opacity:1;transform:translate(-50%,0);}
+  .nbb-modal-mask{
+    position:fixed;inset:0;background:rgba(6,8,14,.72);backdrop-filter:blur(6px);
+    display:none;place-items:center;z-index:180;padding:20px;
+  }
+  .nbb-modal-mask.nbb-modal-on{display:grid;}
+  .nbb-modal{
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);border-radius:18px;
+    width:min(520px,100%);padding:26px 26px 24px;position:relative;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);max-height:86vh;overflow:auto;
+  }
+  .nbb-modal h3{font-size:19px;margin-bottom:10px;}
+  .nbb-modal p{font-size:14px;color:var(--nbb-muted);margin-bottom:9px;}
+  .nbb-modal-close{
+    position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;
+    background:var(--nbb-panel-2);border:1px solid var(--nbb-line);color:#fff;font-size:16px;
+    display:grid;place-items:center;padding:0;
+  }
+  .nbb-modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+
+  .nbb-to-top{
+    position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;
+    background:var(--nbb-panel);border:1px solid var(--nbb-line);color:var(--nbb-text);
+    display:grid;place-items:center;z-index:120;opacity:0;pointer-events:none;
+    transition:opacity .25s,transform .25s;transform:translateY(10px);
+    box-shadow:0 10px 26px rgba(0,0,0,.4);
+  }
+  .nbb-to-top.nbb-top-on{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .nbb-to-top::before{content:"↑";font-size:17px;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1024px){
+    .nbb-hero-grid{grid-template-columns:minmax(0,1fr);}
+    .nbb-hero-visual{max-width:520px;}
+    .nbb-intro-wrap{grid-template-columns:minmax(0,1fr);}
+    .nbb-feature-grid{grid-template-columns:minmax(0,1fr);}
+    .nbb-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .nbb-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .nbb-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:860px){
+    .nbb-burger{display:grid;}
+    .nbb-nav{
+      display:none;position:absolute;left:0;right:0;top:100%;
+      background:var(--nbb-bg-2);border-bottom:1px solid var(--nbb-line);
+      flex-direction:column;padding:10px 16px 18px;gap:2px;margin-left:0;
+      box-shadow:0 22px 40px rgba(0,0,0,.5);
+    }
+    .nbb-header{position:relative;flex-wrap:wrap;}
+    .nbb-nav.nbb-nav-open{display:flex;}
+    .nbb-header-tools{margin-left:0;width:100%;order:4;}
+    .nbb-search{flex:1;}
+    .nbb-search input{width:100%;max-width:none;}
+    .nbb-search input:focus{width:100%;}
+    .nbb-btn-cta{display:none;}
+  }
+  @media (max-width:720px){
+    .nbb-creator-grid,.nbb-comments,.nbb-faq-wrap{grid-template-columns:minmax(0,1fr);}
+    .nbb-plan-grid{grid-template-columns:minmax(0,1fr);}
+    .nbb-index-item{grid-template-columns:minmax(0,1fr);}
+    .nbb-contact{grid-template-columns:minmax(0,1fr);}
+    .nbb-news-item{grid-template-columns:minmax(0,1fr);gap:4px;}
+    .nbb-footer-inner{grid-template-columns:minmax(0,1fr);}
+    .nbb-hero-badge{left:8px;}
+  }
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- ========== S1 吸顶：公告条 + 页头 ========== -->
+<div class="nbb-sticky-wrap">
+  <div class="nbb-announce" id="nbb-announce">
+    <span class="nbb-announce-tag">官方发布</span>
+    <span class="nbb-announce-text">
+      2026 冬季企划《影像的边界》正式上线，<b>新增 12 部原创高清短片</b>；创作者扶持计划第 4 期开放报名；社区投稿入口同步升级，支持 4K 上传与在线预览。
+    </span>
+  </div>
+  <header class="nbb-header">
+    <a class="nbb-brand" href="#nbb-top" aria-label="返回 niceassBBW 首页">
+      <span class="nbb-brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="#21130a"/></svg>
+      </span>
+      <span class="nbb-brand-name">niceassBBW<small>VIDEO BRAND</small></span>
+    </a>
+    <nav class="nbb-nav" id="nbb-nav" aria-label="主导航">
+      <a href="#nbb-top">首页</a>
+      <a href="#nbb-about">品牌简介</a>
+      <a href="#nbb-focus">焦点内容</a>
+      <a href="#nbb-insight">关键词解析</a>
+      <a href="#nbb-plan">专题企划</a>
+      <a href="#nbb-creators">创作者</a>
+      <a href="#nbb-voice">用户评价</a>
+      <a href="#nbb-faq">常见问题</a>
+    </nav>
+    <div class="nbb-header-tools">
+      <div class="nbb-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="nbb-search-input" placeholder="搜索视频 / 创作者 / 专题" aria-label="站内搜索">
+        <div class="nbb-search-tip" id="nbb-search-tip"></div>
+      </div>
+      <button class="nbb-btn-cta" type="button" data-nbb-modal="submit">投稿入口</button>
+      <button class="nbb-burger" type="button" id="nbb-burger" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<main id="nbb-top">
+
+  <!-- ========== S2 品牌首屏 ========== -->
+  <section class="nbb-hero">
+    <div class="nbb-container">
+      <div class="nbb-hero-grid">
+        <div>
+          <span class="nbb-kicker">官方网站 · 品牌视频门户</span>
+          <h1 class="nbb-h1">niceassBBW</h1>
+          <p class="nbb-hero-sub">
+            作为面向全球观众的<b>视频品牌官方网站</b>，niceassBBW 以原创影像为核心，围绕行业观察、创作者访谈与生活方式记录，搭建高品质内容生态。我们用真实、专业、持续的更新节奏，陪伴每一位观众与创作者的成长。
+          </p>
+          <div class="nbb-hero-actions">
+            <a class="nbb-btn-primary" href="#nbb-focus">观看焦点内容
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+            </a>
+            <button class="nbb-btn-ghost" type="button" data-nbb-modal="submit">成为创作者</button>
+            <button class="nbb-btn-ghost" type="button" data-nbb-modal="contact">合作与联系</button>
+          </div>
+          <div class="nbb-hero-stats">
+            <div><b data-nbb-count="1860">0</b><span>原创视频（部）</span></div>
+            <div><b data-nbb-count="42">0</b><span>签约创作者（位）</span></div>
+            <div><b data-nbb-count="920">0</b><span>累计更新（期）</span></div>
+          </div>
+        </div>
+        <div class="nbb-hero-visual">
+          <div class="nbb-hero-frame">
+            <svg viewBox="0 0 640 800" role="img" aria-label="niceassBBW 品牌首屏主视觉：深色演播厅中的橙色光带与取景框">
+              <defs>
+                <linearGradient id="nbbHeroBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0f111a"/>
+                  <stop offset="0.55" stop-color="#1b2033"/>
+                  <stop offset="1" stop-color="#2a1f2a"/>
+                </linearGradient>
+                <linearGradient id="nbbHeroBeam" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0" stop-color="#ff8a3d" stop-opacity="0"/>
+                  <stop offset="0.5" stop-color="#ff8a3d" stop-opacity=".85"/>
+                  <stop offset="1" stop-color="#ffd9bf" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="nbbHeroBlue" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#5d7cff" stop-opacity=".9"/>
+                  <stop offset="1" stop-color="#5d7cff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="800" fill="url(#nbbHeroBg)"/>
+              <path d="M0 600 C160 520 380 700 640 560 L640 800 L0 800 Z" fill="#141826"/>
+              <path d="M40 640 L600 200 L640 250 L90 700 Z" fill="url(#nbbHeroBeam)" opacity=".55"/>
+              <circle cx="470" cy="230" r="150" fill="url(#nbbHeroBlue)" opacity=".45"/>
+              <circle cx="150" cy="620" r="110" fill="#ff8a3d" opacity=".12"/>
+              <g stroke="#3a4260" stroke-width="2" fill="none">
+                <rect x="70" y="90" width="500" height="620" rx="18"/>
+                <path d="M70 210 L570 210 M70 590 L570 590"/>
+              </g>
+              <g fill="#eceef6" opacity=".92">
+                <circle cx="100" cy="120" r="5"/>
+                <circle cx="120" cy="120" r="5" opacity=".5"/>
+                <circle cx="140" cy="120" r="5" opacity=".3"/>
+              </g>
+              <g transform="translate(320 400)">
+                <circle r="64" fill="#0f111a" stroke="#ff8a3d" stroke-width="2"/>
+                <path d="M-18 -26 L34 0 L-18 26 Z" fill="#ff8a3d"/>
+              </g>
+              <g stroke="#5d7cff" stroke-width="1.5" opacity=".55">
+                <path d="M120 700 L520 700"/>
+                <path d="M140 720 L500 720" opacity=".4"/>
+              </g>
+              <g fill="#9aa2b8" font-family="sans-serif" font-size="17">
+                <text x="92" y="672">ORIGINAL / HD / BRAND</text>
+              </g>
+            </svg>
+          </div>
+          <div class="nbb-hero-badge">
+            <span class="nbb-dot" aria-hidden="true"></span>
+            <p><b>本周更新 8 部新片</b>官方发布 · 持续运营中</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S2b 企业简介 ========== -->
+  <section class="nbb-section" id="nbb-about">
+    <div class="nbb-container">
+      <div class="nbb-intro-wrap">
+        <div class="nbb-intro-text">
+          <span class="nbb-kicker">企业简介 · Brand Profile</span>
+          <h2 style="font-size:clamp(21px,2.6vw,28px);margin-bottom:18px;">一家把影像当作长期事业的企业</h2>
+          <p>
+            niceassBBW 是一家以视频内容为核心业务的品牌企业，官方网站承担内容发布、创作者招募与观众沟通三项职能。自成立以来，团队坚持原创与正版授权双线并行，累计上线超过 1860 部高清视频，覆盖行业观察、人物访谈、生活方式记录与知识科普等多元方向。
+          </p>
+          <p>
+            我们相信品质来自稳定的生产节奏与真实的表达能力。平台设有内容审核、创作者培训与季度评审机制，确保每一条公开内容都经过选题、拍摄、剪辑与合规四道流程。企业目前拥有 42 位签约创作者，并持续通过扶持计划吸纳新面孔。
+          </p>
+          <p>
+            作为值得信赖的视频品牌，niceassBBW 也将社会责任纳入日常运营：为青年影像作者提供设备与场地支持，与地方文化机构合作记录城市记忆，并把社区反馈作为内容迭代的重要依据。我们期待用扎实的作品，陪伴观众度过每一个值得被记录的时刻。
+          </p>
+        </div>
+        <div class="nbb-intro-cards">
+          <article class="nbb-mini-card">
+            <h3>内容生态：自制 + 共创</h3>
+            <p>自制企划占四成，创作者共创占六成，形成稳定的选题互补与风格多样性。</p>
+          </article>
+          <article class="nbb-mini-card">
+            <h3>技术标准：高清与可访问性</h3>
+            <p>全线支持 1080P 起播，重点内容提供 4K 版本，并配备字幕与章节导航。</p>
+          </article>
+          <article class="nbb-mini-card">
+            <h3>社区运营：真实反馈驱动</h3>
+            <p>每季度发布社区观察报告，公开内容投票结果与创作者成长数据。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S3 焦点内容 ========== -->
+  <section class="nbb-section" id="nbb-focus">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">焦点内容 · Focus</span>
+          <h2>niceassBBW 本周焦点与热门视频</h2>
+          <p>由编辑团队与社区投票共同选出的重点内容，覆盖行业观察、人物访谈与创作幕后。</p>
+        </div>
+      </div>
+      <div class="nbb-feature-grid">
+        <article class="nbb-feature-main">
+          <div class="nbb-feature-cover">
+            <svg viewBox="0 0 800 450" role="img" aria-label="焦点视频封面：夜晚城市天台上的摄影团队与橙色灯光">
+              <defs>
+                <linearGradient id="nbbFocusSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1a2138"/>
+                  <stop offset="1" stop-color="#33202c"/>
+                </linearGradient>
+                <linearGradient id="nbbFocusGlow" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#ff8a3d" stop-opacity="0"/>
+                  <stop offset=".5" stop-color="#ff8a3d" stop-opacity=".7"/>
+                  <stop offset="1" stop-color="#ff8a3d" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="450" fill="url(#nbbFocusSky)"/>
+              <g fill="#12172a">
+                <rect x="0" y="250" width="120" height="200"/>
+                <rect x="130" y="200" width="90" height="250"/>
+                <rect x="600" y="230" width="110" height="220"/>
+                <rect x="720" y="180" width="80" height="270"/>
+              </g>
+              <g fill="#8792b8" opacity=".5">
+                <rect x="145" y="220" width="12" height="12"/>
+                <rect x="170" y="220" width="12" height="12"/>
+                <rect x="145" y="250" width="12" height="12"/>
+                <rect x="615" y="250" width="12" height="12"/>
+                <rect x="640" y="250" width="12" height="12"/>
+                <rect x="740" y="210" width="12" height="12"/>
+              </g>
+              <rect x="0" y="330" width="800" height="120" fill="#0e1220"/>
+              <ellipse cx="400" cy="342" rx="300" ry="16" fill="url(#nbbFocusGlow)"/>
+              <g>
+                <rect x="300" y="250" width="46" height="70" rx="8" fill="#0d111d"/>
+                <circle cx="323" cy="244" r="20" fill="#0d111d"/>
+                <rect x="446" y="256" width="40" height="64" rx="8" fill="#0d111d"/>
+                <circle cx="466" cy="250" r="18" fill="#0d111d"/>
+              </g>
+              <g stroke="#3d4a72" stroke-width="3" fill="none">
+                <path d="M323 300 L360 330 M466 306 L440 330"/>
+              </g>
+              <circle cx="400" cy="320" r="40" fill="#0d111d" stroke="#ff8a3d" stroke-width="2"/>
+              <path d="M388 306 L414 320 L388 334 Z" fill="#ff8a3d"/>
+              <g fill="#c9cee0" font-family="sans-serif" font-size="15" opacity=".85">
+                <text x="42" y="404">EP.42 / NIGHT PRODUCTION</text>
+              </g>
+            </svg>
+          </div>
+          <div class="nbb-feature-body">
+            <div class="nbb-tag-row">
+              <span class="nbb-tag nbb-tag-hot">重点推荐</span>
+              <span class="nbb-tag">创作幕后</span>
+              <span class="nbb-tag">4K</span>
+            </div>
+            <h3>天台上的三十六个小时：一支品牌短片的诞生记录</h3>
+            <p>摄制组在城南一栋老楼天台连续工作两个夜晚，从勘景、布光到补拍，完整记录了一部三分钟短片从纸面到成片的全部工序。片中穿插导演与摄影指导的现场对话，也保留了被删除的镜头与失败的光位尝试。</p>
+            <div class="nbb-meta-row">
+              <span>作者 <b>陆栖</b></span>
+              <span>播放 <b>12.8万</b></span>
+              <span>点赞 <b>7,340</b></span>
+              <span>收藏 <b>2,118</b></span>
+              <span>时长 <b>18:24</b></span>
+            </div>
+            <div class="nbb-mini-actions">
+              <button class="nbb-act" type="button" data-nbb-like>点赞 <b>7340</b></button>
+              <button class="nbb-act" type="button" data-nbb-fav>收藏</button>
+              <button class="nbb-act" type="button" data-nbb-modal="comment">评论</button>
+              <button class="nbb-act" type="button" data-nbb-copy>复制链接</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="nbb-feature-list">
+          <article class="nbb-video-row">
+            <div class="nbb-video-index">01</div>
+            <div>
+              <h4>夜行地图：城市光影中的十二个取景点</h4>
+              <p>用一条路线串起旧码头、隧道与高架桥，讲清楚夜景拍摄的时间选择与色温控制。</p>
+              <div class="nbb-video-foot">
+                <span class="nbb-author">顾千帆</span><span>播放 9.6万</span><span>点赞 4,120</span><span>收藏 1,308</span>
+              </div>
+              <div class="nbb-mini-actions">
+                <button class="nbb-act" type="button" data-nbb-like>点赞 <b>4120</b></button>
+                <button class="nbb-act" type="button" data-nbb-fav>收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="nbb-video-row">
+            <div class="nbb-video-index">02</div>
+            <div>
+              <h4>访谈：从剪辑台到监制桌的七年</h4>
+              <p>一位资深剪辑师讲述节奏感如何建立，以及创作者如何在甲方需求与个人表达之间找平衡。</p>
+              <div class="nbb-video-foot">
+                <span class="nbb-author">沈砚</span><span>播放 8.2万</span><span>点赞 3,760</span><span>收藏 1,022</span>
+              </div>
+              <div class="nbb-mini-actions">
+                <button class="nbb-act" type="button" data-nbb-like>点赞 <b>3760</b></button>
+                <button class="nbb-act" type="button" data-nbb-fav>收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="nbb-video-row">
+            <div class="nbb-video-index">03</div>
+            <div>
+              <h4>小团队如何用两周完成一部品牌纪录片</h4>
+              <p>预算拆解、器材清单与拍摄排期表全部公开，适合刚进入商业影像领域的创作者参考。</p>
+              <div class="nbb-video-foot">
+                <span class="nbb-author">许知野</span><span>播放 7.4万</span><span>点赞 3,044</span><span>收藏 986</span>
+              </div>
+              <div class="nbb-mini-actions">
+                <button class="nbb-act" type="button" data-nbb-like>点赞 <b>3044</b></button>
+                <button class="nbb-act" type="button" data-nbb-fav>收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="nbb-video-row">
+            <div class="nbb-video-index">04</div>
+            <div>
+              <h4>声音先行：为影像设计一条听觉线索</h4>
+              <p>从环境音采集到配乐选择，拆解声音如何在叙事中承担情绪推进与空间提示的作用。</p>
+              <div class="nbb-video-foot">
+                <span class="nbb-author">程屿</span><span>播放 6.1万</span><span>点赞 2,688</span><span>收藏 874</span>
+              </div>
+              <div class="nbb-mini-actions">
+                <button class="nbb-act" type="button" data-nbb-like>点赞 <b>2688</b></button>
+                <button class="nbb-act" type="button" data-nbb-fav>收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="nbb-video-row">
+            <div class="nbb-video-index">05</div>
+            <div>
+              <h4>社区观察：这一季观众都在看什么</h4>
+              <p>基于站内播放与收藏数据，整理出本季度最受欢迎的五类视频题材与观众反馈关键词。</p>
+              <div class="nbb-video-foot">
+                <span class="nbb-author">编辑部</span><span>播放 5.7万</span><span>点赞 2,210</span><span>收藏 760</span>
+              </div>
+              <div class="nbb-mini-actions">
+                <button class="nbb-act" type="button" data-nbb-like>点赞 <b>2210</b></button>
+                <button class="nbb-act" type="button" data-nbb-fav>收藏</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 关键词解析（800字+） ========== -->
+  <section class="nbb-section" id="nbb-insight">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">深度解析 · Insight</span>
+          <h2>关于 niceassBBW：一个视频品牌的长期主义</h2>
+          <p>从行业定位、内容方法到社区运营，理解这个官方网站背后的判断与选择。</p>
+        </div>
+      </div>
+      <div class="nbb-analysis">
+        <h3>一、为什么选择以影像作为核心表达</h3>
+        <p>
+          在信息过载的当下，影像依然是最能承载复杂情绪与真实场景的媒介之一。niceassBBW 从创立之初就把业务重心放在视频内容上，而不是图文搬运或短平快的流量拼贴。原因很直接：影像需要时间，需要现场，需要人去等待一个合适的天气、一束准确的光、一句真诚的回答。这些成本恰恰构成了内容的护城河。我们把它称为“慢变量”——它不会在一天之内爆红，但会在三年、五年之后沉淀为可被信任的品牌资产。作为一家持续运营的企业，我们更愿意把预算投入到拍摄现场与创作者身上，而不是短期的曝光采买。
+        </p>
+        <h3>二、内容生态的三层结构</h3>
+        <p>
+          第一层是品牌自制企划，由内部编辑团队主导选题，通常以季度为单位推进，强调完整叙事与制作标准；第二层是签约创作者共创，平台提供拍摄支持、版权登记与分发渠道，创作者保留创作主导权；第三层是社区投稿，面向所有注册用户开放，经过基础审核后进入公开内容池。三层结构并非严格的等级关系，而是互相供血：社区投稿中的优质选题会被提升为共创项目，共创作品中的成熟作者有机会进入自制企划。这种流动机制让内容生态保持活力，也让新人看到清晰的成长路径。我们统计过，近两年上线的原创视频中，有近三成来自社区投稿，这个比例仍在上升。
+        </p>
+        <h3>三、品质控制与创作者支持并行</h3>
+        <p>
+          品质不是一句口号，它对应一套可执行的标准。niceassBBW 对公开内容执行四道流程：选题评估、拍摄规范、剪辑复审与合规检查。每一道流程都有明确的责任人与时间节点，避免内容在最后的发布环节临时妥协。与此同时，我们也清楚，标准过高会让新人望而却步。因此平台设置了“成长通道”：新注册创作者可以先发布低门槛的日常记录，系统会给出画面稳定性、声音清晰度与信息完整度的反馈建议；当作品累计达到一定数量与质量后，可申请参与进阶培训，获取器材借用与导师点评资格。这套机制运行以来，创作者的平均更新周期从最初的 45 天缩短到 21 天，内容完成度显著提升。
+        </p>
+        <h3>四、社区运营与长期陪伴</h3>
+        <p>
+          视频品牌的真正价值，不只在播放量，更在观众是否愿意留下来。niceassBBW 的社区运营围绕“可参与”展开：每季度开放一次内容投票，观众可以决定下一期专题的方向；每月举办一次线上观影会，创作者与观众在评论区直接对话；每年发布一份社区观察报告，公开内容数据与改进计划。这些动作看起来琐碎，却构成了品牌与用户之间的信任基础。我们始终认为，值得信赖的关系来自持续的、可被检验的行动，而不是一次性的营销活动。官方网站作为这些行动的承载空间，会继续保留完整的更新日志与创作者档案，让每一位访问者都能看到这个品牌真实运转的样子。
+        </p>
+        <p>
+          未来一年，niceassBBW 计划把内容方向进一步聚焦在三个关键词上：真实、专业、陪伴。真实意味着不回避拍摄中的困难与失败；专业意味着在流程与标准上持续投入；陪伴意味着把观众当作长期的同行者而非一次性的流量。我们希望这个官方网站不只是一个播放页面，而是一个能够被反复访问、被认真阅读的内容据点。
+        </p>
+        <ul>
+          <li>内容方向：行业观察、人物访谈、生活方式记录、知识科普、创作幕后</li>
+          <li>更新节奏：每周固定更新，季度推出大型专题企划</li>
+          <li>创作者机制：签约共创 + 社区投稿 + 成长通道</li>
+          <li>社区动作：季度投票、月度观影会、年度观察报告</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S4 专题企划 ========== -->
+  <section class="nbb-section" id="nbb-plan">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">专题企划 · Series</span>
+          <h2>正在进行的专题与品牌企划</h2>
+          <p>以季度为单位推进的深度内容项目，每个专题包含多条视频与配套图文。</p>
+        </div>
+      </div>
+      <div class="nbb-plan-grid">
+        <article class="nbb-plan-card">
+          <span class="nbb-plan-status">更新中 · 第 6 期</span>
+          <h3>影像的边界</h3>
+          <p>聚焦拍摄技术与表达方式的交叉地带，每期邀请一位创作者拆解一个具体的创作难题。</p>
+          <ul class="nbb-plan-items">
+            <li>EP.06 夜景布光的三种思路</li>
+            <li>EP.05 手持镜头的稳定性训练</li>
+            <li>EP.04 用自然光讲一个故事</li>
+          </ul>
+        </article>
+        <article class="nbb-plan-card">
+          <span class="nbb-plan-status">更新中 · 第 3 期</span>
+          <h3>城市记忆档案</h3>
+          <p>与地方文化机构合作，记录正在消失的街区、手艺与日常声音，强调在地性与真实性。</p>
+          <ul class="nbb-plan-items">
+            <li>EP.03 旧码头的最后一批搬运工</li>
+            <li>EP.02 巷子里的修补铺</li>
+            <li>EP.01 清晨四点的菜市场</li>
+          </ul>
+        </article>
+        <article class="nbb-plan-card">
+          <span class="nbb-plan-status nbb-status-soon">筹备中 · 冬季上线</span>
+          <h3>创作者的第一部片</h3>
+          <p>面向新人的实战企划，从选题到成片全程跟拍，公开完整预算与排期表。</p>
+          <ul class="nbb-plan-items">
+            <li>选题会实录：如何判断一个题值得拍</li>
+            <li>拍摄期：三天完成一支五分钟短片</li>
+            <li>复盘篇：那些被剪掉的镜头</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S5 创作者矩阵 ========== -->
+  <section class="nbb-section" id="nbb-creators">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">创作者 · Creators</span>
+          <h2>niceassBBW 签约创作者名录</h2>
+          <p>风格各异的影像作者，共同构成平台的内容底色。</p>
+        </div>
+      </div>
+      <div class="nbb-creator-grid">
+        <article class="nbb-creator">
+          <div class="nbb-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者陆栖的头像：橙色圆形与简笔侧影">
+              <rect width="64" height="64" fill="#2a2033"/>
+              <circle cx="32" cy="26" r="12" fill="#ff8a3d"/>
+              <path d="M12 64 C12 44 52 44 52 64 Z" fill="#ffb98f"/>
+            </svg>
+          </div>
+          <div>
+            <h3>陆栖 <span>导演</span></h3>
+            <div class="nbb-creator-stats"><span>作品 <b>86</b></span><span>粉丝 <b>24.6万</b></span></div>
+            <p>专注品牌短片与幕后纪录，擅长在有限预算里调度现场。过去三年完成四十余支商业与公益短片，习惯把勘景笔记公开给同行参考。</p>
+          </div>
+        </article>
+        <article class="nbb-creator">
+          <div class="nbb-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者顾千帆的头像：蓝色方形与几何人形">
+              <rect width="64" height="64" fill="#1c2438"/>
+              <rect x="14" y="14" width="36" height="36" rx="8" fill="#5d7cff" opacity=".8"/>
+              <circle cx="32" cy="28" r="9" fill="#dfe4ff"/>
+              <path d="M16 56 C16 40 48 40 48 56 Z" fill="#9fb1ff"/>
+            </svg>
+          </div>
+          <div>
+            <h3>顾千帆 <span>城市影像</span></h3>
+            <div class="nbb-creator-stats"><span>作品 <b>64</b></span><span>粉丝 <b>18.2万</b></span></div>
+            <p>用镜头记录城市的夜晚与清晨，作品以长镜头和环境音见长。最近在整理一份城市取景地图，计划开放给所有创作者免费使用。</p>
+          </div>
+        </article>
+        <article class="nbb-creator">
+          <div class="nbb-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者沈砚的头像：绿色圆形与访谈话筒">
+              <rect width="64" height="64" fill="#1b2a26"/>
+              <circle cx="32" cy="32" r="20" fill="none" stroke="#3ddc97" stroke-width="2"/>
+              <rect x="28" y="16" width="8" height="22" rx="4" fill="#3ddc97"/>
+              <path d="M22 36 C22 46 42 46 42 36" fill="none" stroke="#7cf0bb" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>沈砚 <span>人物访谈</span></h3>
+            <div class="nbb-creator-stats"><span>作品 <b>52</b></span><span>粉丝 <b>15.7万</b></span></div>
+            <p>长期从事人物访谈与口述记录，提问风格克制，擅长让对方在镜头前放松。相信好的访谈不是挖料，而是耐心听完一句话。</p>
+          </div>
+        </article>
+        <article class="nbb-creator">
+          <div class="nbb-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者许知野的头像：紫色三角形与剪辑符号">
+              <rect width="64" height="64" fill="#261f36"/>
+              <path d="M32 12 L54 50 L10 50 Z" fill="#8f6bff" opacity=".8"/>
+              <path d="M26 30 L38 37 L26 44 Z" fill="#efe7ff"/>
+            </svg>
+          </div>
+          <div>
+            <h3>许知野 <span>制作实务</span></h3>
+            <div class="nbb-creator-stats"><span>作品 <b>47</b></span><span>粉丝 <b>12.4万</b></span></div>
+            <p>把制作流程拆成可执行清单的实践派，擅长预算管理与排期优化。视频里常出现真实表格与现场混乱，也正因如此更有参考价值。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S6 图文索引 ========== -->
+  <section class="nbb-section" id="nbb-index">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">内容索引 · Index</span>
+          <h2>配套图文与深度摘要</h2>
+          <p>视频之外的延伸阅读，帮助观众理解每个选题背后的判断与资料。</p>
+        </div>
+      </div>
+      <div class="nbb-index-list">
+        <article class="nbb-index-item">
+          <div class="nbb-index-thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="图文封面：俯拍桌面的拍摄排期表与器材清单">
+              <rect width="320" height="200" fill="#20263a"/>
+              <rect x="30" y="30" width="120" height="140" rx="6" fill="#e8ecf8" opacity=".9"/>
+              <g stroke="#9aa2b8" stroke-width="2">
+                <path d="M44 58 H136 M44 78 H120 M44 98 H128 M44 118 H110 M44 138 H124"/>
+              </g>
+              <rect x="170" y="46" width="118" height="56" rx="6" fill="#ff8a3d" opacity=".75"/>
+              <rect x="170" y="116" width="118" height="56" rx="6" fill="#5d7cff" opacity=".65"/>
+            </svg>
+          </div>
+          <div>
+            <h3>两周拍完一部纪录片的排期方法</h3>
+            <p>把拍摄期拆成勘景、主体拍摄、补拍三段，并用弹性缓冲应对天气与场地变化。文中附一份可直接套用的排期模板说明。</p>
+            <div class="nbb-index-tags"><span>制作实务</span><span>排期</span><span>预算</span></div>
+          </div>
+        </article>
+        <article class="nbb-index-item">
+          <div class="nbb-index-thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="图文封面：城市夜景剪影与取景地标注线">
+              <rect width="320" height="200" fill="#141a2b"/>
+              <g fill="#26304c">
+                <rect x="0" y="110" width="60" height="90"/>
+                <rect x="70" y="80" width="46" height="120"/>
+                <rect x="200" y="96" width="52" height="104"/>
+                <rect x="262" y="60" width="58" height="140"/>
+              </g>
+              <circle cx="160" cy="92" r="26" fill="none" stroke="#ff8a3d" stroke-width="2"/>
+              <path d="M160 118 V162" stroke="#ff8a3d" stroke-width="2" stroke-dasharray="4 4"/>
+              <path d="M118 150 H202" stroke="#5d7cff" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>城市夜景取景地图：十二个点位与最佳时段</h3>
+            <p>从旧码头到高架桥，逐条列出点位的交通方式、最佳拍摄时段与人群密度，附带镜头焦段建议。</p>
+            <div class="nbb-index-tags"><span>城市探索</span><span>夜景</span><span>取景</span></div>
+          </div>
+        </article>
+        <article class="nbb-index-item">
+          <div class="nbb-index-thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="图文封面：访谈录音波形与话筒简笔">
+              <rect width="320" height="200" fill="#1b2a26"/>
+              <g stroke="#3ddc97" stroke-width="3" stroke-linecap="round">
+                <path d="M40 108 V92"/><path d="M58 120 V80"/><path d="M76 112 V88"/><path d="M94 126 V74"/>
+                <path d="M112 110 V90"/><path d="M130 118 V82"/><path d="M148 104 V96"/>
+              </g>
+              <circle cx="222" cy="100" r="34" fill="none" stroke="#7cf0bb" stroke-width="2"/>
+              <rect x="214" y="76" width="16" height="40" rx="8" fill="#7cf0bb"/>
+              <path d="M206 106 C206 124 238 124 238 106" fill="none" stroke="#7cf0bb" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>访谈现场：如何让受访者忘记镜头</h3>
+            <p>分享访谈前的沟通话术、机位布置与提问顺序，并解释为什么“沉默三秒”往往比追问更有效。</p>
+            <div class="nbb-index-tags"><span>人物访谈</span><span>现场</span><span>方法</span></div>
+          </div>
+        </article>
+        <article class="nbb-index-item">
+          <div class="nbb-index-thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="图文封面：声音波形与耳机图标组成的配色块">
+              <rect width="320" height="200" fill="#2a2033"/>
+              <rect x="24" y="24" width="130" height="152" rx="8" fill="#ff8a3d" opacity=".35"/>
+              <g stroke="#ffd9bf" stroke-width="3" stroke-linecap="round">
+                <path d="M190 100 V86"/><path d="M208 112 V74"/><path d="M226 104 V82"/><path d="M244 118 V66"/>
+                <path d="M262 108 V78"/><path d="M280 100 V88"/>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <h3>为影像设计一条听觉线索</h3>
+            <p>声音设计不只是配乐，还包括环境音层次、静默的使用与情绪转折点。文章给出四种常见结构的对照说明。</p>
+            <div class="nbb-index-tags"><span>声音设计</span><span>情绪</span><span>结构</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S6b 用户评价 ========== -->
+  <section class="nbb-section" id="nbb-voice">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">用户评价 · Community</span>
+          <h2>来自社区的真实反馈</h2>
+          <p>不同身份、不同视角的评价，共同构成对平台的口碑检验。</p>
+        </div>
+      </div>
+      <div class="nbb-comments">
+        <article class="nbb-comment">
+          <div class="nbb-comment-head">
+            <div class="nbb-avatar"><svg viewBox="0 0 36 36" role="img" aria-label="用户阿岚的头像"><rect width="36" height="36" fill="#2a2033"/><circle cx="18" cy="14" r="7" fill="#ff8a3d"/><path d="M6 36c0-11 24-11 24 0z" fill="#ffb98f"/></svg></div>
+            <b>阿岚</b><small>2026-11-18</small>
+          </div>
+          <div class="nbb-stars" aria-label="评分 5 分">★★★★★</div>
+          <q>把拍摄失败的经验也放出来，这点很难得。看完天台那期，我终于知道自己的布光问题出在哪。</q>
+        </article>
+        <article class="nbb-comment">
+          <div class="nbb-comment-head">
+            <div class="nbb-avatar"><svg viewBox="0 0 36 36" role="img" aria-label="用户陈默的头像"><rect width="36" height="36" fill="#1c2438"/><rect x="9" y="9" width="18" height="18" rx="4" fill="#5d7cff"/></svg></div>
+            <b>陈默</b><small>2026-11-15</small>
+          </div>
+          <div class="nbb-stars" aria-label="评分 4 分">★★★★☆</div>
+          <q>内容质量稳定，就是希望图文的更新频率再高一点。有些视频看完还想找文字资料，目前只有部分专题有。</q>
+        </article>
+        <article class="nbb-comment">
+          <div class="nbb-comment-head">
+            <div class="nbb-avatar"><svg viewBox="0 0 36 36" role="img" aria-label="用户小满的头像"><rect width="36" height="36" fill="#1b2a26"/><circle cx="18" cy="18" r="11" fill="none" stroke="#3ddc97" stroke-width="2"/></svg></div>
+            <b>小满</b><small>2026-11-12</small>
+          </div>
+          <div class="nbb-stars" aria-label="评分 5 分">★★★★★</div>
+          <q>投稿流程比我预想的清楚，上传之后三天内收到了审核反馈，还附了改进建议，不是那种冷冰冰的模板。</q>
+        </article>
+        <article class="nbb-comment">
+          <div class="nbb-comment-head">
+            <div class="nbb-avatar"><svg viewBox="0 0 36 36" role="img" aria-label="用户林一苇的头像"><rect width="36" height="36" fill="#261f36"/><path d="M18 6l12 24H6z" fill="#8f6bff"/></svg></div>
+            <b>林一苇</b><small>2026-11-09</small>
+          </div>
+          <div class="nbb-stars" aria-label="评分 5 分">★★★★★</div>
+          <q>城市记忆档案是我每期必看的系列，拍得克制，没有刻意煽情，但看完会想再去那些地方走一遍。</q>
+        </article>
+        <article class="nbb-comment">
+          <div class="nbb-comment-head">
+            <div class="nbb-avatar"><svg viewBox="0 0 36 36" role="img" aria-label="用户江野的头像"><rect width="36" height="36" fill="#20263a"/><rect x="7" y="7" width="22" height="22" rx="11" fill="none" stroke="#ff8a3d" stroke-width="2"/></svg></div>
+            <b>江野</b><small>2026-11-05</small>
+          </div>
+          <div class="nbb-stars" aria-label="评分 4 分">★★★★☆</div>
+          <q>作为同行，最欣赏的是他们敢公开预算和排期。行业里愿意这么做的团队不多，希望继续保持。</q>
+        </article>
+        <article class="nbb-comment">
+          <div class="nbb-comment-head">
+            <div class="nbb-avatar"><svg viewBox="0 0 36 36" role="img" aria-label="用户苏禾的头像"><rect width="36" height="36" fill="#2a1f2a"/><circle cx="18" cy="18" r="9" fill="#ff6a8a"/></svg></div>
+            <b>苏禾</b><small>2026-10-30</small>
+          </div>
+          <div class="nbb-stars" aria-label="评分 5 分">★★★★★</div>
+          <q>观影会的形式很好，创作者会在评论区一条条回复。虽然人不多，但氛围像一个小型放映厅。</q>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S7 企业动态 ========== -->
+  <section class="nbb-section" id="nbb-news">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">企业动态 · News</span>
+          <h2>官方发布与运营更新</h2>
+          <p>来自 niceassBBW 的最新企业资讯与内容更新日志。</p>
+        </div>
+      </div>
+      <div class="nbb-news-list">
+        <article class="nbb-news-item">
+          <div class="nbb-news-date">2026-11-20</div>
+          <div>
+            <h3>创作者扶持计划第 4 期开放报名</h3>
+            <p>本期增加器材借用名额与导师一对一辅导时长，报名入口在投稿页内，截止时间为 12 月 10 日。</p>
+          </div>
+        </article>
+        <article class="nbb-news-item">
+          <div class="nbb-news-date">2026-11-14</div>
+          <div>
+            <h3>《影像的边界》冬季企划上线</h3>
+            <p>新增 12 部原创高清短片，围绕夜景、自然光与声音设计三个方向展开，专题页已同步更新。</p>
+          </div>
+        </article>
+        <article class="nbb-news-item">
+          <div class="nbb-news-date">2026-11-02</div>
+          <div>
+            <h3>社区投稿入口升级，支持 4K 上传</h3>
+            <p>新版投稿页提供在线预览与分章节标记，审核反馈将附带具体时间点，便于创作者精准修改。</p>
+          </div>
+        </article>
+        <article class="nbb-news-item">
+          <div class="nbb-news-date">2026-10-21</div>
+          <div>
+            <h3>第三季度社区观察报告发布</h3>
+            <p>报告披露内容投票结果、创作者成长数据与观众反馈关键词，可在内容索引页查看摘要。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S7b 合作品牌 ========== -->
+  <section class="nbb-section" id="nbb-partners">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">合作伙伴 · Partners</span>
+          <h2>与我们共同推动内容品质的伙伴</h2>
+          <p>在器材、场地、发行与公益项目上的长期合作方。</p>
+        </div>
+      </div>
+      <div class="nbb-partner-grid">
+        <div class="nbb-partner"><b>光屿器材</b><span>拍摄器材支持</span></div>
+        <div class="nbb-partner"><b>屿声空间</b><span>录音与后期场地</span></div>
+        <div class="nbb-partner"><b>城南文化馆</b><span>在地文化合作</span></div>
+        <div class="nbb-partner"><b>青禾影像基金</b><span>青年创作者公益</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S7c FAQ ========== -->
+  <section class="nbb-section" id="nbb-faq">
+    <div class="nbb-container">
+      <div class="nbb-sec-head">
+        <div>
+          <span class="nbb-kicker">常见问题 · FAQ</span>
+          <h2>关于平台与创作的常见疑问</h2>
+          <p>点击问题查看解答，如仍有疑问可通过页脚联系方式与我们沟通。</p>
+        </div>
+      </div>
+      <div class="nbb-faq-wrap">
+        <details class="nbb-faq" open>
+          <summary>niceassBBW 是一个怎样的视频品牌？</summary>
+          <p>我们是一家以原创视频为核心业务的企业，官方网站集中展示自制企划、创作者作品与社区动态，强调真实、专业与持续运营。</p>
+        </details>
+        <details class="nbb-faq">
+          <summary>如何成为签约创作者？</summary>
+          <p>先在社区投稿入口发布至少三部原创作品，累计通过审核后可申请加入扶持计划，通过面谈与作品评审即可签约。</p>
+        </details>
+        <details class="nbb-faq">
+          <summary>投稿支持哪些格式与分辨率？</summary>
+          <p>目前支持 MP4 与 MOV，建议 1080P 起，重点内容可提交 4K 版本；音频建议 48kHz 采样率。</p>
+        </details>
+        <details class="nbb-faq">
+          <summary>内容审核一般需要多久？</summary>
+          <p>常规投稿在三个工作日内反馈，参与专题企划的作品会安排编辑一对一沟通，周期约五到七个工作日。</p>
+        </details>
+        <details class="nbb-faq">
+          <summary>作品版权归属如何约定？</summary>
+          <p>创作者保留作品著作权，平台获得展示与传播授权；商业合作另行签署协议，收益分成在协议中明确。</p>
+        </details>
+        <details class="nbb-faq">
+          <summary>是否提供器材借用与场地支持？</summary>
+          <p>签约创作者可申请器材借用与录音场地，按季度额度使用；社区创作者可通过扶持计划参与抽选。</p>
+        </details>
+        <details class="nbb-faq">
+          <summary>可以转载平台内容吗？</summary>
+          <p>请先通过页脚联系方式提交申请，注明用途与渠道；未经授权不得二次剪辑或用于商业推广。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S7d 联系与投稿 ========== -->
+  <section class="nbb-section" id="nbb-contact">
+    <div class="nbb-container">
+      <div class="nbb-contact">
+        <div>
+          <h2>一起拍点值得留下的东西</h2>
+          <p>无论你是创作者、品牌方还是普通观众，都欢迎通过官方渠道与我们联系。投稿、合作、反馈都会由专人跟进，我们承诺在三个工作日内回复。</p>
+        </div>
+        <div class="nbb-hero-actions" style="margin-top:0;">
+          <button class="nbb-btn-primary" type="button" data-nbb-modal="submit">进入投稿</button>
+          <button class="nbb-btn-ghost" type="button" data-nbb-modal="contact">联系企业</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== S8 页脚 ========== -->
+<footer class="nbb-footer">
+  <div class="nbb-footer-inner">
+    <div class="nbb-footer-brand">
+      <a class="nbb-brand" href="#nbb-top">
+        <span class="nbb-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="#21130a"/></svg>
+        </span>
+        <span class="nbb-brand-name">niceassBBW<small>VIDEO BRAND</small></span>
+      </a>
+      <p>niceassBBW 官方网站 · 以原创影像连接创作者与观众，持续运营高品质视频内容生态。</p>
+    </div>
+    <div>
+      <h4>内容</h4>
+      <ul>
+        <li><a href="#nbb-focus">焦点内容</a></li>
+        <li><a href="#nbb-plan">专题企划</a></li>
+        <li><a href="#nbb-index">图文索引</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>关于</h4>
+      <ul>
+        <li><a href="#nbb-about">品牌简介</a></li>
+        <li><a href="#nbb-creators">创作者名录</a></li>
+        <li><a href="#nbb-news">企业动态</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>支持</h4>
+      <ul>
+        <li><a href="#nbb-faq">常见问题</a></li>
+        <li><a href="#nbb-contact">投稿与联系</a></li>
+        <li><a href="#nbb-voice">社区反馈</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="nbb-footer-bottom">
+    <span>© 2026 niceassBBW 官方网站 版权所有</span>
+    <span>企业主体：niceassBBW 影像文化有限公司</span>
+    <span>备案号：京ICP备2026012345号</span>
+    <span>持续运营中 · 用户至上 · 内容品质优先</span>
+  </div>
+</footer>
+
+<!-- ========== 交互组件 ========== -->
+<div class="nbb-toast" id="nbb-toast" role="status" aria-live="polite"></div>
+
+<div class="nbb-modal-mask" id="nbb-modal-mask">
+  <div class="nbb-modal" role="dialog" aria-modal="true" aria-labelledby="nbb-modal-title">
+    <button class="nbb-modal-close" type="button" id="nbb-modal-close" aria-label="关闭弹窗">×</button>
+    <h3 id="nbb-modal-title">提示</h3>
+    <div id="nbb-modal-body"></div>
+    <div class="nbb-modal-actions" id="nbb-modal-actions"></div>
+  </div>
+</div>
+
+<button class="nbb-to-top" id="nbb-to-top" type="button" aria-label="回到顶部"></button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('nbb-burger');
+  var nav = document.getElementById('nbb-nav');
+  if (burger && nav) {
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('nbb-nav-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('nbb-nav-open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('nbb-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('nbb-toast-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toast.classList.remove('nbb-toast-on');
+    }, 2200);
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('nbb-search-input');
+  var searchTip = document.getElementById('nbb-search-tip');
+  var searchPool = [
+    '天台短片幕后记录',
+    '城市夜景取景地图',
+    '人物访谈方法',
+    '声音设计听觉线索',
+    '创作者扶持计划',
+    '影像的边界 冬季企划',
+    '剪辑节奏训练',
+    '声音采集与配乐'
+  ];
+  function doSearch(){
+    var kw = (searchInput.value || '').trim();
+    if (!kw) {
+      searchTip.innerHTML = '可搜索：焦点内容、专题企划、创作者、关键词。';
+      searchTip.classList.add('nbb-tip-on');
+      return;
+    }
+    var hits = searchPool.filter(function(item){ return item.indexOf(kw) !== -1; });
+    if (hits.length) {
+      searchTip.innerHTML = '找到 <b>' + hits.length + '</b> 条相关内容：' + hits.slice(0,3).join('、');
+    } else {
+      searchTip.innerHTML = '暂未匹配到「' + kw.replace(/[<>&]/g,'') + '」，可尝试更短的关键词。';
+    }
+    searchTip.classList.add('nbb-tip-on');
+  }
+  if (searchInput && searchTip) {
+    searchInput.addEventListener('input', doSearch);
+    searchInput.addEventListener('focus', doSearch);
+    searchInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+    });
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('.nbb-search')) searchTip.classList.remove('nbb-tip-on');
+    });
+  }
+
+  /* ---------- 点赞 ---------- */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-nbb-like]');
+    if (!likeBtn) return;
+    var numEl = likeBtn.querySelector('b');
+    var base = parseInt(likeBtn.getAttribute('data-nbb-base') || (numEl ? numEl.textContent.replace(/,/g,'') : '0'), 10);
+    if (isNaN(base)) base = 0;
+    if (!likeBtn.hasAttribute('data-nbb-base')) likeBtn.setAttribute('data-nbb-base', base);
+    var on = likeBtn.classList.toggle('nbb-act-on');
+    var val = on ? base + 1 : base;
+    if (numEl) numEl.textContent = val.toLocaleString('en-US');
+    showToast(on ? '已点赞，感谢支持' : '已取消点赞');
+  });
+
+  /* ---------- 收藏 ---------- */
+  document.addEventListener('click', function(e){
+    var favBtn = e.target.closest('[data-nbb-fav]');
+    if (!favBtn) return;
+    var on = favBtn.classList.toggle('nbb-act-on');
+    favBtn.textContent = on ? '已收藏' : '收藏';
+    showToast(on ? '已加入收藏夹' : '已从收藏夹移除');
+  });
+
+  /* ---------- 复制链接 ---------- */
+  document.addEventListener('click', function(e){
+    var copyBtn = e.target.closest('[data-nbb-copy]');
+    if (!copyBtn) return;
+    var text = 'niceassBBW 焦点内容：天台上的三十六个小时';
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){
+        showToast('链接已复制，可以分享给朋友了');
+      }).catch(function(){
+        showToast('复制失败，请手动选择内容');
+      });
+    } else {
+      showToast('当前环境不支持自动复制');
+    }
+  });
+
+  /* ---------- 弹窗 ---------- */
+  var mask = document.getElementById('nbb-modal-mask');
+  var modalTitle = document.getElementById('nbb-modal-title');
+  var modalBody = document.getElementById('nbb-modal-body');
+  var modalActions = document.getElementById('nbb-modal-actions');
+  var modalClose = document.getElementById('nbb-modal-close');
+
+  var modalData = {
+    submit: {
+      title: '创作者投稿入口',
+      body: '<p>欢迎向 niceassBBW 投稿。请准备：作品文件或在线预览链接、300 字以内的创作说明、拍摄器材与时间地点信息。</p><p>常规审核三个工作日内反馈，参与专题企划的作品将由编辑一对一沟通。</p><p>投稿邮箱：<b>submit@niceassbbw.example</b></p>',
+      actions: '<button class="nbb-btn-primary" type="button" data-nbb-close>知道了</button>'
+    },
+    contact: {
+      title: '企业合作与联系',
+      body: '<p>商务合作：合作@niceassbbw.example</p><p>媒体与版权：media@niceassbbw.example</p><p>社区反馈：可通过页脚常见问题查看处理流程，我们会定期汇总并公开改进结果。</p>',
+      actions: '<button class="nbb-btn-ghost" type="button" data-nbb-close>关闭</button>'
+    },
+    comment: {
+      title: '发表你的看法',
+      body: '<p>本页评论为演示交互。真实社区中，你可以对每一条视频发表意见，也可以通过季度内容投票影响下一期专题方向。</p><p>请保持友善与具体，我们希望评论区成为有营养的讨论空间。</p>',
+      actions: '<button class="nbb-btn-primary" type="button" data-nbb-close>好的</button>'
+    }
+  };
+
+  function openModal(key){
+    var data = modalData[key];
+    if (!data) return;
+    modalTitle.textContent = data.title;
+    modalBody.innerHTML = data.body;
+    modalActions.innerHTML = data.actions;
+    mask.classList.add('nbb-modal-on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    mask.classList.remove('nbb-modal-on');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function(e){
+    var trigger = e.target.closest('[data-nbb-modal]');
+    if (trigger) {
+      openModal(trigger.getAttribute('data-nbb-modal'));
+      return;
+    }
+    if (e.target.closest('[data-nbb-close]')) closeModal();
+  });
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (mask) {
+    mask.addEventListener('click', function(e){
+      if (e.target === mask) closeModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-nbb-count'), 10) || 0;
+    var start = null;
+    var dur = 1200;
+    function step(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * ease).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll('[data-nbb-count]');
+  if ('IntersectionObserver' in window && counters.length) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function(c){ io.observe(c); });
+  } else {
+    counters.forEach(function(c){
+      c.textContent = (parseInt(c.getAttribute('data-nbb-count'),10) || 0).toLocaleString('en-US');
+    });
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var toTop = document.getElementById('nbb-to-top');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 480) {
+      toTop.classList.add('nbb-top-on');
+    } else {
+      toTop.classList.remove('nbb-top-on');
+    }
+  }, { passive: true });
+  if (toTop) {
+    toTop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+})();
+</script>
+</body>
+            </html>
